@@ -1,19 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualizador AR - Coluna Vertebral</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coluna Vertebral em AR</title>
+
+    <!-- Importa o model-viewer -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: #f8f8f8;
+        margin: 0;
+        padding: 20px;
+      }
+      h1 {
+        margin-top: 30px;
+      }
+      model-viewer {
+        width: 100%;
+        height: 80vh;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+      p {
+        color: #444;
+        margin-top: 20px;
+      }
+    </style>
   </head>
-  <body style="text-align:center; font-family:sans-serif; margin-top:50px;">
-    <h1>Visualizar Coluna Vertebral em AR</h1>
 
-    <!-- Para Android -->
-    <p><a href="https://drive.google.com/uc?export=download&id=1GtLU9RJZ3e4JXFxEaxgkRrud7IvZUW7c" rel="ar">Ver em AR (Android)</a></p>
+  <body>
+    <h1>Coluna Vertebral em 3D e Realidade Aumentada</h1>
 
-    <!-- Para iPhone -->
-    <p><a href="https://drive.google.com/uc?export=download&id=1Rx3sPtrQC6kdNzCiXif-A0f7QUGG72N9" rel="ar">Ver em AR (iPhone)</a></p>
+    <!-- Visualizador 3D / AR -->
+    <model-viewer
+      src="spine.glb"
+      ios-src="spine.usdz"
+      ar
+      ar-modes="scene-viewer quick-look webxr"
+      camera-controls
+      auto-rotate
+      alt="Modelo 3D de uma coluna vertebral">
+    </model-viewer>
 
-    <p>Se não abrir automaticamente, tente segurar o dedo sobre o link e escolher “Visualizar em AR”.</p>
+    <p>Toque no botão “Ver em seu espaço” para abrir em AR no seu celular 📱</p>
   </body>
 </html>
